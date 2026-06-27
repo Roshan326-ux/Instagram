@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_app/Widgets/ui_helper.dart';
+import 'package:instagram_app/Widgets/uihelper.dart';
 
+import '../bottomnav/bottomnav.dart';
 import '../signup/signup.dart';
 
 class Loginscreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class Loginscreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            UiHelper.CutomImage(imgurl: "Logo.png"),
+            UiHelper.CustomImage(imgurl: "InstaLogo.png"),
             SizedBox(height: 20),
             UiHelper.CustomTextField(
               controller: emailcontroller,
@@ -42,12 +43,20 @@ class Loginscreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10),
-            UiHelper.CustomButton(buttonname: "Login", callback: () {}),
+            UiHelper.CustomButton(
+              buttonname: "Login",
+              callback: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavScreen()),
+                );
+              },
+            ),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                UiHelper.CutomImage(imgurl: "fb.png"),
+                UiHelper.CustomImage(imgurl: "fb.png"),
                 UiHelper.CustomTextButton(
                   text: "login with facebook",
                   callback: () {},
@@ -71,9 +80,15 @@ class Loginscreen extends StatelessWidget {
                   "Dont have an account?",
                   style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
-                UiHelper.CustomTextButton(text: "Sign Up", callback: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Signup()));
-                }),
+                UiHelper.CustomTextButton(
+                  text: "Sign Up",
+                  callback: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Signup()),
+                    );
+                  },
+                ),
               ],
             ),
           ],

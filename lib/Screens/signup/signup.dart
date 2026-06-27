@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagram_app/Widgets/ui_helper.dart';
+import 'package:instagram_app/Widgets/uihelper.dart';
 
 import '../login/loginscreen.dart';
 
@@ -15,7 +15,7 @@ class Signup extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            UiHelper.CutomImage(imgurl: "Logo.png"),
+            UiHelper.CustomImage(imgurl: "logo.png"),
             SizedBox(height: 30),
             UiHelper.CustomTextField(
               controller: emailcontroller,

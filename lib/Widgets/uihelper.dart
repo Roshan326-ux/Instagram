@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UiHelper {
-  static CustomTextButton({
+  static Widget CustomTextButton({
     required String text,
     required VoidCallback callback,
   }) {
@@ -17,7 +16,7 @@ class UiHelper {
     );
   }
 
-  static CustomTextField({
+  static Widget CustomTextField({
     required TextEditingController controller,
     required String text,
     required bool tohide,
@@ -25,22 +24,22 @@ class UiHelper {
   }) {
     return Container(
       height: 50,
-      width: 320,
+      width: 343,
       decoration: BoxDecoration(
         color: Color(0XFF121212),
-        border: Border.all(color: Colors.grey.shade700),
         borderRadius: BorderRadius.circular(5),
+        border: Border.all(color: Colors.white24),
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 15),
         child: TextField(
           controller: controller,
           obscureText: tohide,
-          // keyboardType: textinputtype,
+          keyboardType: textinputtype,
           style: TextStyle(color: Colors.white),
           decoration: InputDecoration(
             hintText: text,
-            hintStyle: TextStyle(fontSize: 14, color: Colors.white54),
+            hintStyle: TextStyle(fontSize: 14, color: Colors.white),
             border: InputBorder.none,
           ),
         ),
@@ -48,17 +47,17 @@ class UiHelper {
     );
   }
 
-  static CutomImage({required String imgurl}) {
+  static Widget CustomImage({required String imgurl}) {
     return Image.asset("assets/images/$imgurl");
   }
 
-  static CustomButton({
-    required String buttonname,
+  static Widget CustomButton({
     required VoidCallback callback,
+    required String buttonname,
   }) {
     return SizedBox(
       height: 45,
-      width: 320,
+      width: 343,
       child: ElevatedButton(
         onPressed: () {
           callback();

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_app/Screens/login/loginscreen.dart';
-import 'package:instagram_app/Widgets/ui_helper.dart';
+import 'package:instagram_app/Widgets/uihelper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,9 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            UiHelper.CutomImage(imgurl: "insta.png"),
+            UiHelper.CustomImage(imgurl: "insta.png"),
             SizedBox(height: 10),
-            UiHelper.CutomImage(imgurl: "Logo.png"),
+            UiHelper.CustomImage(imgurl: "InstaLogo.png"),
           ],
         ),
       ),
